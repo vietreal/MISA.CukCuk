@@ -1,0 +1,49 @@
+@import url(./components/base/UI/icon.css);
+@import url(./components/base/UI/tab-bar.css);
+@import url(./components/base/UI/common.css);
+
+/* Reset Css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Tahoma-Regular;
+  font-size: 13px;
+  font-weight: normal;
+  color: #000;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+#app {
+  display: flex;
+}
+
+input,
+button {
+  font-family: Tahoma-Regular;
+  font-size: 13px;
+  border: none;
+  outline: none;
+}
+
+@font-face {
+  font-family: "Tahoma-Regular";
+  src: url("./assets/fonts/Tahoma-Regular.ttf");
+}
+@font-face {
+  font-family: "Tahoma-Bold";
+  src: url("./assets/fonts/TAHOMAB0.TTF");
+}

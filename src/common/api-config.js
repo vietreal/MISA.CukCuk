@@ -1,0 +1,16 @@
+const URL = {
+  BASE_URL: "https://localhost:44355/",
+  UNIT_ROUTER: "api/v1/units/",
+  EMPLOYEE_ROUTER: "api/v1/employees/",
+  IMAGE_EMPLOYEE_ROUTER: "images/employee/",
+};
+
+export const API_CONFIG = {
+  UNIT_API: URL.BASE_URL + URL.UNIT_ROUTER,
+  EMPLOYEE_API: URL.BASE_URL + URL.EMPLOYEE_ROUTER,
+  EMPLOYEE_IMAGE_URL: URL.BASE_URL + URL.IMAGE_EMPLOYEE_ROUTER,
+  DEFAULT_IMAGE_URL:
+    URL.BASE_URL +
+    URL.IMAGE_EMPLOYEE_ROUTER +
+    "262eb770-e9ab-44e8-864b-a3933b7d792d.jpg",
+};

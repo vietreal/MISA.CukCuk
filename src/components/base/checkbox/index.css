@@ -1,0 +1,38 @@
+.base-checkbox {
+  display: block;
+  position: relative;
+  height: 24px;
+  width: max-content;
+  padding-top: 4px;
+}
+
+.base-checkbox input {
+  position: absolute;
+  top: 4px;
+  opacity: 0;
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  z-index: 100;
+}
+
+.base-checkbox .checkbox-custom {
+  position: absolute;
+  top: 4px;
+  left: 0px;
+  height: 15px;
+  width: 15px;
+  background: url(../../../assets/images/checkbox.png) no-repeat;
+}
+
+.base-checkbox input:checked:focus + .checkbox-custom {
+  background-position: -15px -15px;
+}
+
+.base-checkbox .checkbox-checked {
+  background-position: 0 -15px;
+}
+
+.base-checkbox .checkbox-label {
+  padding-left: 19px;
+}

@@ -1,0 +1,282 @@
+.employee-detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: auto;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.popup-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(10, 10, 10, 0.4) !important;
+  z-index: 999;
+}
+
+.employee-detail .popup-body {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 910px;
+  height: 645px;
+  border: 5px solid #0072bc;
+  border-radius: 4px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.form-header {
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  height: 30px;
+  border: 5px solid #0072bc;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #0072bc;
+  padding: 3px 4px 1px 4px;
+  justify-content: space-between;
+}
+
+.form-header .form-title {
+  color: #fff;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.form-body {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.form-content {
+  position: absolute;
+  top: 27px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 8px 8px 0;
+}
+
+.form-content .form-content-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 29px;
+  right: 0;
+}
+
+.form-content .form-content-body {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding-top: 4px;
+  background-color: #fff;
+  z-index: 1111;
+}
+
+.form-content-body .content-left {
+  width: 730px;
+  height: 472px;
+  position: absolute;
+  left: 8px;
+  top: 0;
+}
+
+.form-content-body .content-right {
+  position: absolute;
+  width: 140px;
+  right: auto;
+  left: 738px;
+  height: 472px;
+  margin: 0px;
+  top: 0px;
+  padding: 4px 0 0 8px;
+}
+
+/* Row */
+.misa-row {
+  position: relative;
+  width: 100%;
+  height: 28px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.misa-row-left {
+  width: 145px;
+  height: 24px;
+  min-height: 24px;
+  padding: 4px 5px 0 0;
+  line-height: 17px;
+}
+
+.misa-row-right {
+  width: calc(100% - 145px);
+  height: 24px;
+}
+
+/* Table */
+.table-header {
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+.table-header .column-header {
+  height: auto;
+  padding: 7px 10px;
+  min-height: 28px;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  background-color: #ededed;
+  text-align: center;
+}
+
+.col-first {
+  width: 33%;
+  border-right: 1px solid #c5c5c5;
+}
+
+.table-body {
+  width: 100%;
+  height: 80px;
+  border: 1px solid #c1c1c1;
+  overflow: hidden;
+}
+
+.row-body {
+  width: 100%;
+  height: 29px;
+  border-bottom: 1px solid #ccc;
+}
+
+.column-body {
+  height: 100%;
+}
+
+.column-body input {
+  width: 100%;
+  padding: 5px 10px 4px 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 15px;
+  margin-top: 2px;
+}
+
+.column-body .btn-more {
+  width: 40px;
+  height: 28px;
+  padding: 4px 10px;
+}
+
+.btn-more .icon-more {
+  width: 20px;
+  height: 20px;
+  background: url(../../assets/images/ic_more.png) no-repeat;
+  cursor: pointer;
+}
+
+.line-manipulation {
+  height: 34px;
+  border: 1px solid #ccc;
+  border-top: none;
+  align-items: center;
+}
+
+.line-manipulation .misa-btn {
+  height: 25px;
+  padding: 3px;
+  margin: 0 4px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+}
+
+.line-manipulation .misa-btn:hover {
+  background-image: -webkit-linear-gradient(top, #eff0ec, #e1f2e9);
+  background-color: #fcfcfc;
+  border-color: #0071c1;
+}
+
+.suggestion {
+  position: absolute;
+  font-style: italic;
+  font-size: 11px;
+  right: auto;
+  left: 322px;
+  top: -4px;
+  height: 32px;
+  line-height: 17px;
+}
+
+.warning-pass {
+  width: 585px;
+  height: 28px;
+  margin: 8px 0 0 145px;
+}
+
+.warning-pass > div {
+  min-height: 24px;
+  font-size: 13px;
+  line-height: 17px;
+}
+
+.employee-detail fieldset {
+  padding: 0 8px 4px;
+  border: 1px solid #afafaf;
+}
+
+.employee-detail fieldset .misa-row {
+  height: 24px;
+}
+
+.employee-detail fieldset .misa-row-left {
+  width: 125px;
+  height: 100%;
+}
+
+.employee-detail fieldset .misa-row-right {
+  width: 288px;
+}
+
+.employee-detail .address-field .misa-row-right {
+  width: 280px;
+  height: 100%;
+}
+
+.address-field .misa-row-right input {
+  height: 100%;
+}
+
+.btn-copy {
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  margin: 70px 4px;
+  border: 1px solid #ccc;
+  background-color: #fcfcfc;
+}
+
+.icon-import-right {
+  width: 16px;
+  height: 16px;
+  background: url(../../assets/images/import-right.png) no-repeat;
+}

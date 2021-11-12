@@ -1,0 +1,57 @@
+.misa-toolbar {
+  height: 27px;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #d9d9d9;
+  border-bottom: none;
+  background-color: #ededed;
+  background-image: -webkit-linear-gradient(top, #f9f9f9, #e3e4e6);
+  padding: 2px;
+}
+
+.misa-toolbar .toolbar-item {
+  height: 22px;
+  padding: 2px 4px;
+  width: max-content;
+  margin: 0;
+  margin-right: 1px;
+  border: 1px solid transparent;
+}
+
+.misa-toolbar .toolbar-item:hover {
+  background-color: #fff;
+  border: 1px solid #0072bc;
+}
+
+.toolbar-item .misa-btn {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.toolbar-item:hover {
+  background-color: #6b6f9d;
+}
+
+.toolbar-icon {
+  width: 27px;
+  height: 36px;
+}
+
+.toolbar-icon:hover {
+  background-color: #6b6f9d;
+  cursor: pointer;
+}
+
+.item-disabled {
+  opacity: 0.25;
+  cursor: default !important;
+}
+
+.item-disabled:hover {
+  cursor: default !important;
+}
+
+.item-disabled button:hover {
+  background-color: #2b3173 !important;
+  cursor: default !important;
+}

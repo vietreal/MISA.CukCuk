@@ -1,0 +1,41 @@
+.misa-btn {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  min-height: 16px;
+  font-weight: normal;
+}
+
+.icon-button {
+  width: 16px;
+  height: 16px;
+}
+
+.misa-btn .misa-btn-text {
+  font-family: Tahoma-Regular;
+  white-space: nowrap;
+  padding: 0 5px;
+  line-height: 16px;
+}
+
+.misa-btn[type="primary"] {
+  background-color: transparent;
+  color: #000;
+}
+
+.misa-btn[type="secondary"] {
+  background-color: #fff;
+  color: #2b3173;
+}
+
+.btn-red {
+  background-color: #df4646 !important;
+}
+
+.inactive {
+  opacity: 0.5;
+  cursor: default;
+}

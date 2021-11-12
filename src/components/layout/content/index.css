@@ -1,0 +1,8 @@
+.content {
+  position: absolute;
+  top: 55px;
+  left: 230px;
+  width: calc(100% - 230px);
+  height: calc(100vh - 55px);
+  background-color: #fff;
+}

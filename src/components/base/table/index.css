@@ -1,0 +1,179 @@
+.misa-table {
+  height: calc(100% - 27px);
+  overflow: hidden;
+}
+
+table.base-table {
+  border: 0;
+  border-spacing: 0;
+  min-width: 100%;
+}
+
+table.scrolling {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+}
+
+table.scrolling thead {
+  flex: 0 0 auto;
+  display: block;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+table.scrolling .table-body {
+  flex: 1 1 auto;
+  display: block;
+  overflow: hidden;
+  border: 1px solid #e1e1e1;
+}
+
+table.scrolling.scroll-y thead.scrollsync {
+  overflow-y: scroll;
+}
+
+thead.scrollsync::-webkit-scrollbar {
+  background: #f5f5f5;
+}
+
+table.scrolling.scroll-x .table-body {
+  overflow-x: auto;
+}
+
+table.scrolling.scroll-y .table-body {
+  overflow-y: auto;
+}
+
+table.scrolling.scrolly thead.scrollsync::-webkit-scrollbar {
+  display: block;
+  background-color: #ededed;
+}
+table.scrolling.scrolly thead.scrollsync::-webkit-scrollbar-track {
+  background-color: #ededed;
+}
+
+.misa-table table thead {
+  height: 55px;
+}
+
+.misa-table table th {
+  white-space: initial;
+  background-color: #ededed;
+  border-right: 1px solid #c5c5c5;
+  vertical-align: top;
+  text-align: center !important;
+  font-weight: normal;
+}
+
+.header-label {
+  height: auto;
+  min-height: 28px;
+  padding: 7px 10px 6px;
+  font-weight: normal;
+  color: #000;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+}
+
+.header-combobox {
+  height: 26px;
+  padding: 0 2px;
+}
+
+.header-combobox .misa-cbo,
+.header-combobox .operator-combobox {
+  height: 24px;
+}
+
+.header-combobox .misa-cbo .cbo-header {
+  border-radius: 0;
+}
+
+.misa-table .row-table {
+  border-top: 1px solid #ccc;
+  outline: none;
+}
+
+.row-table {
+  -webkit-border-horizontal-spacing: 0px;
+  -webkit-border-vertical-spacing: 0px;
+  border-color: #ccc;
+}
+
+.row-table tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+.misa-table .row-table td {
+  background-color: #fff;
+  outline: none;
+  vertical-align: middle;
+  border-right: 1px solid #ccc;
+}
+
+.grid-item-td {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 5px 10px 4px;
+  line-height: 15px;
+}
+
+tr input.grid-item-td {
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+input.grid-item-td:focus {
+  background-color: #fff;
+  border: 1px solid #636dde;
+}
+
+.misa-table table td:focus {
+  border: 1px solid #636dde !important;
+}
+
+.misa-table tr.grid-item-select td {
+  background-color: rgba(155, 199, 227, 0.4) !important;
+}
+
+.row-table tbody tr:nth-child(2n) td {
+  background-color: #fafafa;
+}
+
+.row-table tbody tr:first-child {
+  border-top: none;
+}
+
+.row-table tbody tr:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+.row-table tbody tr:hover > td {
+  background-color: #e2eff8;
+}
+
+td.delete-column {
+  min-width: 50px;
+  max-width: 50px;
+  border-right: none !important;
+}
+
+td.delete-column .grid-item-delete {
+  margin-left: 10px;
+  padding: 7px;
+  width: 30px;
+  height: 100%;
+}

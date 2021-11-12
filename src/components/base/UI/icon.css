@@ -1,0 +1,126 @@
+/* Icon menu */
+.menu-navbar-icon {
+  width: 24px;
+  height: 24px;
+  background: url(../../../assets/images/iconMenu.png);
+  margin: 0 8px;
+}
+
+.icon-overview {
+  background-position: 0 533px;
+}
+
+.icon-report {
+  background-position: 0 342px;
+}
+
+.icon-view-cart {
+  background-position: 0 159px;
+}
+
+.icon-stock {
+  background-position: 0 495px;
+}
+
+.icon-dictionary {
+  background-position: 0 380px;
+}
+
+.icon-toggle {
+  background: url(../../../assets/images/icon-left-header.png) no-repeat;
+}
+
+.misa-icon {
+  width: 16px;
+  height: 16px;
+  background: url(../../../assets/images/IconSprite.png) no-repeat;
+}
+
+.icon-tool {
+  background: url(../../../assets/images/tool-sprites.png) no-repeat;
+}
+
+.icon-add {
+  background-position: 0 -2648px;
+}
+
+.icon-clone {
+  background-position: 0 -1888px;
+}
+
+.icon-search {
+  background-position: 0 -272px;
+}
+
+.icon-edit {
+  background: url(../../../assets/images/Edit16.png) no-repeat 50% 50%;
+}
+
+.icon-delete {
+  background-position: 0 -2680px;
+}
+
+.icon-refresh {
+  background-position: 0 -2584px;
+}
+
+.icon-help {
+  background-position: 0 -1600px;
+}
+
+.icon-undo {
+  background-position: 0 -432px;
+}
+
+.icon-save {
+  background-image: url(../../../assets/images/Save16.png);
+}
+
+.icon-close-red {
+  background-position: 0 -2160px;
+}
+
+.icon-close {
+  background-position: 0 0;
+}
+
+.icon-validate {
+  background: url(../../../assets/images/exclamation.png) no-repeat;
+}
+
+.icon-next {
+  background: url(../../../assets/images/page-next.png) no-repeat;
+}
+
+.icon-prev {
+  background: url(../../../assets/images/page-prev.png) no-repeat;
+}
+
+.icon-first {
+  background: url(../../../assets/images/page-first.png) no-repeat;
+}
+
+.icon-last {
+  background: url(../../../assets/images/page-last.png) no-repeat;
+}
+
+.icon-reload {
+  background: url(../../../assets/images/refresh.png) no-repeat;
+}
+
+.icon-popup {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-popup.icon-warning {
+  background: url(../../../assets/images/icon-warning.png) no-repeat;
+}
+
+.icon-popup.icon-question {
+  background: url(../../../assets/images/icon-question.png) no-repeat;
+}
+
+/* .icon-popup.icon-error {
+  background-position: -88px -2px;
+} */

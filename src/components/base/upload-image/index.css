@@ -1,0 +1,106 @@
+/* Ảnh hàng hóa */
+.upload-image {
+  width: 134px;
+}
+
+.image-file {
+  width: 134px;
+  height: 148px;
+}
+
+.image-text {
+  font-style: italic;
+}
+
+.image-body {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #c1c1c1;
+}
+
+.image-body .image-display {
+  width: 100%;
+  height: 146px;
+}
+
+.image-display.image {
+  height: 100%;
+}
+
+.image-display img {
+  width: 132px;
+  height: 146px;
+}
+
+.image-display img.image {
+  margin: 0;
+}
+
+.image-symbol {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 110px;
+  height: 24px;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  padding: 7px;
+  background-color: #fff;
+  z-index: 1111;
+}
+
+.image-symbol:hover {
+  border-width: 2px;
+  cursor: pointer !important;
+}
+
+.image-body .image-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 28px;
+  justify-content: space-evenly;
+}
+
+.image-footer .image-button-link {
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #fcfcfc !important;
+}
+
+.image-footer .image-button-cancel {
+  border: 1px solid #ccc;
+  background-color: #fcfcfc !important;
+}
+
+.image-button-cancel .icon-delete {
+  margin-left: 10px;
+}
+
+.image-footer .image-button-link:focus {
+  background-color: #6b6f9d;
+}
+
+.image-footer button {
+  width: 40px;
+  height: 24px;
+  text-align: center;
+}
+
+.image-footer button:hover {
+  background-image: -webkit-linear-gradient(top, #eff0ec, #e1f2e9);
+  background-color: #fcfcfc;
+  border-color: #0071c1;
+}
+
+.image-button-link .misa-btn-text {
+  font-size: 12px;
+  margin-left: 9px;
+}
+
+.image-footer .image-button-link:hover {
+  background-color: #6b6f9d;
+  cursor: pointer;
+}
