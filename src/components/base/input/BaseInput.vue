@@ -19,8 +19,7 @@
     <!-- Date -->
     <datepicker
       v-if="type == 'date'"
-      :value="value"
-      v-on:input="$emit('input', $event.target.value)"
+      v-model="dateValue"
       :format="'DD/MM/YYYY'"
       :value-type="'YYYY-MM-DDThh:mm:ss'"
       :disabled-date="(date) => date >= new Date()"
@@ -56,6 +55,8 @@ export default {
 
       // Nội dung cảnh báo validate
       tooltipText: "",
+
+      dateValue: null,
     };
   },
 
@@ -167,6 +168,18 @@ export default {
     blurHandler() {
       this.validateData(this.value);
       this.$emit("blur", this.value);
+    },
+  },
+
+  watch: {
+    value: function () {
+      if (this.type == "date") {
+        this.dateValue = this.value;
+      }
+    },
+
+    dateValue: function (date) {
+      this.$emit("input", date);
     },
   },
 };

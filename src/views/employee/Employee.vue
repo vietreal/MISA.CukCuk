@@ -267,10 +267,10 @@
       :btn-right-first-click="deleteEmployee"
     >
       <div v-if="listRowChecked.length > 1">
-        {{ deleteInventoryItemMessage }}
+        {{ deleteEmployeeMessage }}
       </div>
       <div v-else>
-        {{ deleteInventoryItemMessage }}
+        {{ deleteEmployeeMessage }}
       </div>
     </base-message-box>
 
@@ -359,7 +359,7 @@ export default {
       ],
 
       // Message box cảnh báo xóa nhân viên
-      deleteInventoryItemMessage: "",
+      deleteEmployeeMessage: "",
       showDeleteMessageBox: false,
 
       tabBarSelect: 1,
@@ -579,12 +579,12 @@ export default {
     btnDeleteOnClick() {
       if (this.listRowChecked.length == 1) {
         let item = this.listRowChecked[0];
-        this.deleteInventoryItemMessage = MESSAGE_BOX.DELETE_EMPLOYEE.format(
+        this.deleteEmployeeMessage = MESSAGE_BOX.DELETE_EMPLOYEE.format(
           item.EmployeeCode
         );
         this.showDeleteMessageBox = true;
       } else {
-        this.deleteInventoryItemMessage = MESSAGE_BOX.DELETE_MULTIPLE;
+        this.deleteEmployeeMessage = MESSAGE_BOX.DELETE_MULTIPLE;
         this.showDeleteMessageBox = true;
       }
     },

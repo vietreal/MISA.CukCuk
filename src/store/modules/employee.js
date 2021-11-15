@@ -259,6 +259,9 @@ const actions = {
         // Lấy nhân viên theo id
         const res = await axios.get(API_CONFIG.EMPLOYEE_API + employeeId);
         if (res.data) data = res.data.Data;
+      } else {
+        data.Gender = "1";
+        data.WorkStatus = "1";
       }
 
       let url = API_CONFIG.DEFAULT_IMAGE_URL;

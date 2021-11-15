@@ -62,6 +62,7 @@
                       <div class="misa-row-right width-315">
                         <base-input
                           v-model="employee.Email"
+                          email
                           max-length="100"
                         ></base-input>
                       </div>
@@ -88,6 +89,7 @@
                           required
                           v-model="employee.EmployeeName"
                           max-length="100"
+                          ref="inputName"
                         ></base-input>
                       </div>
                     </div>
@@ -101,7 +103,8 @@
                           <base-combobox
                             cboName="cboGender"
                             :data="cboGender"
-                            defaultValue="1"
+                            @changeValue="(value) => (employee.Gender = value)"
+                            :defaultValue="employee.Gender"
                           ></base-combobox>
                         </div>
                       </div>
@@ -251,12 +254,22 @@
                           <base-combobox
                             cboName="cboWorkStatus"
                             :data="cboWorkStatus"
-                            defaultValue="1"
+                            @changeValue="
+                              (value) => (employee.WorkStatus = value)
+                            "
+                            :defaultValue="employee.WorkStatus"
                           >
                           </base-combobox>
                         </div>
                         <div style="margin-left: 8px">
-                          <base-checkbox checked>
+                          <base-checkbox
+                            @checked="
+                              (value) => {
+                                employee.IsWorkWithSoftware = value;
+                              }
+                            "
+                            checked
+                          >
                             Cho phép làm việc với phần mềmCUKCUK
                           </base-checkbox>
                         </div>
@@ -497,7 +510,10 @@
                         <base-label>Ngày thử việc</base-label>
                       </div>
                       <div class="misa-row-right width-283">
-                        <base-input type="date"></base-input>
+                        <base-input
+                          v-model="employee.ProbationaryDate"
+                          type="date"
+                        ></base-input>
                       </div>
                     </div>
 
@@ -546,12 +562,24 @@
         </div>
       </div>
     </div>
+
+    <!-- Message box cảnh báo trùng mã hàng hóa -->
+    <base-message-box
+      v-if="showValidateMessageBox"
+      icon="icon-warning"
+      btn-right-first="Đồng ý"
+      :btn-right-first-click="hideValidateMessageBox"
+      @close="hideValidateMessageBox"
+    >
+      {{ validateMessage }}
+    </base-message-box>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
 import { FORM_MODE } from "../../common/enums";
+import { MESSAGE_BOX } from "../../common/enums";
 import UploadImage from "../../components/base/upload-image/Index.vue";
 export default {
   name: "EmployeeDetail",
@@ -560,6 +588,9 @@ export default {
 
   data() {
     return {
+      // Nhân viên ban đầu khi mở form
+      originalEmployee: {},
+
       // List button thanh toolbar
       toolbarItems: [
         {
@@ -577,7 +608,7 @@ export default {
         {
           label: "Cất",
           icon: "icon-save",
-          clickHandler: this.btnCloneOnClick,
+          clickHandler: this.saveBtnOnClick,
           shortkey: "Ctrl+S",
           disabled: this.saveBtnDisabled,
         },
@@ -597,7 +628,7 @@ export default {
         {
           label: "Giúp",
           icon: "icon-help",
-          clickHandler: this.reload,
+          clickHandler: () => {},
           shortkey: "F1",
         },
         {
@@ -615,9 +646,21 @@ export default {
         "Thông tin khác",
       ],
 
+      // Message box cảnh báo validate
+      validateMessage: "",
+      showValidateMessageBox: false,
+
+      // Tiêu đề form
       formTitle: null,
 
+      // Hiện input mật khẩu
       showInputPassword: true,
+
+      // Mảng input cần validate
+      validateInputs: [],
+
+      // Input đầu tiên sai định dạng
+      firstInvalidInput: {},
     };
   },
 
@@ -662,16 +705,83 @@ export default {
     autoFocus() {
       this.$refs.inputCode.focusInput();
     },
+
+    saveBtnOnClick() {
+      // Validate dữ liệu
+      let listInputErrors = this.validateForm();
+
+      // Nếu có lỗi
+      if (listInputErrors.length > 0) {
+        this.firstInvalidInput = listInputErrors[0];
+
+        // Hiển thị Message box cảnh báo validate
+        this.showValidateMessageBox = true;
+        this.validateMessage = this.firstInvalidInput.tooltipText;
+      } else {
+        // Thực hiện cất dữ liệu
+        console.log(this.employee);
+
+        // Kiểm tra trùng mã trên hệ thống
+        if (this.isExistCode) {
+          // Hiển thị thông báo
+          this.showValidateMessageBox = true;
+          this.validateMessage = MESSAGE_BOX.EXIST_CODE.format(
+            this.employee.EmployeeCode
+          );
+        } else {
+          // Ẩn form
+          this.HIDE_FORM();
+        }
+      }
+    },
+
+    /**
+     * Hàm validate dữ liệu khi thêm/ sửa nhân viên
+     * Author: dxviet(28/08/2021)
+     */
+    validateForm() {
+      // Mảng những lỗi validate
+      let listInputErrors = [];
+
+      // Duyệt mảng input cần validate
+      this.validateInputs.forEach((input) => {
+        input.validateData(input.value);
+        if (input.isValidate == false) {
+          listInputErrors.push(input);
+        }
+      });
+
+      return listInputErrors;
+    },
+
+    /**
+     * Ẩn message box cảnh báo validate
+     * Author: dxviet(29/08/2021)
+     */
+    hideValidateMessageBox() {
+      this.showValidateMessageBox = false;
+    },
   },
 
   watch: {
-    isShowForm: function () {
-      if (this.formMode == FORM_MODE.ADD)
-        this.setDefaultForm("Thêm nhân viên", true);
-      else if (this.formMode == FORM_MODE.EDIT)
+    // Gán tiêu đề form
+    formMode: function (mode) {
+      if (mode == FORM_MODE.ADD) this.setDefaultForm("Thêm nhân viên", true);
+      else if (mode == FORM_MODE.EDIT)
         this.setDefaultForm("Sửa nhân viên", false);
-      else if (this.formMode == FORM_MODE.WATCH)
-        this.setDefaultForm("Nhân viên", false);
+      else if (mode == FORM_MODE.WATCH) this.setDefaultForm("Nhân viên", false);
+    },
+
+    isShowForm: function (value) {
+      if (value) {
+        // Gán mảng những input cần validate
+        this.validateInputs = [this.$refs.inputCode, this.$refs.inputName];
+        // Tắt cảnh báo validate khi mở form
+        this.validateInputs.forEach((input) => input.resetValidate());
+
+        // Gán nhân viên nguyên bản
+        this.originalEmployee = Object.assign({}, this.employee);
+      }
     },
   },
 };
